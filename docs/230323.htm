@@ -1,0 +1,189 @@
+<html>
+  <head>
+<script
+  src="https://code.jquery.com/jquery-3.6.3.slim.js"
+  integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc="
+  crossorigin="anonymous"></script>
+    
+    <style>
+    </style>
+    <script>
+
+
+
+$(document).ready(function() {
+$.初始值=[10000,0,0,0,0,0];
+var [c1,c2,c3,c4,c5,c6]=$.初始值;
+$.pp=[c1,c2,c3,c4,c5,c6];
+console.log( $.pp );
+
+    poi();
+});
+
+
+
+function poi(){
+  $("button#poi230323btn").click(function(){
+    計算();
+  });
+  $("button#poi230323btn2").click(function(){
+    var [c1,c2,c3,c4,c5,c6]=$.初始值;
+    $.pp=[c1,c2,c3,c4,c5,c6];
+    var pp=$.pp;
+    $('#bbb').text(''+ pp.join(',') +'');
+    $('#aaa').text('123');
+  });
+}
+
+function 計算(){
+  $('#aaa').append('計算');
+  
+  var pp=$.pp;
+  console.log('pp頭', pp );
+  var [c1,c2,c3,c4,c5,c6]=pp;
+  
+  var FFF1=規則c1(c1);
+  //console.log( '規則c1',FFF1 );
+  
+  var FFF2=規則c2(c2);
+  //console.log('規則c2', FFF2 );
+
+  var FFF3=規則c3(c3);
+  //console.log('規則c3', FFF3 );
+  
+  var FFF4=規則c4(c4);
+  //console.log('規則c4', FFF4 );
+
+  var FFF5=規則c5(c5);
+  //console.log('規則c5', FFF5 );
+
+  var FFF6=規則c6(c6);
+  //console.log('規則c6', FFF6 );
+
+  pp=[
+    FFF1[0]+FFF2[0]+FFF3[0]+FFF4[0]+FFF5[0]+FFF6[0] ,
+    FFF1[1]+FFF2[1]+FFF3[1]+FFF4[1]+FFF5[1]+FFF6[1] ,
+    FFF1[2]+FFF2[2]+FFF3[2]+FFF4[2]+FFF5[2]+FFF6[2] ,
+	FFF1[3]+FFF2[3]+FFF3[3]+FFF4[3]+FFF5[3]+FFF6[3] ,
+	FFF1[4]+FFF2[4]+FFF3[4]+FFF4[4]+FFF5[4]+FFF6[4] ,
+	FFF1[5]+FFF2[5]+FFF3[5]+FFF4[5]+FFF5[5]+FFF6[5] ,
+	];
+
+/*
+for (let i = 0; i < 6; i++){}
+*/
+
+  console.log('pp尾', pp );
+
+  $('#bbb').text(''+ pp.join(',') +'');
+  
+  $.pp=pp;
+  
+}
+
+
+function 規則c1(in1){
+  //console.log( in1 );
+  var [c1,c2,c3,c4,c5,c6]=[0,0,0,0,0,0];
+  c1=in1;
+  var FFF;
+  FFF= Math.floor( in1 *1.0);
+  c1=c1-FFF;
+  c2=c2+FFF;
+  
+  var FFF=[c1,c2,c3,c4,c5,c6];
+  return FFF;
+  
+}//c1
+
+function 規則c2(in1){
+  //console.log( in1 );
+  var [c1,c2,c3,c4,c5,c6]=[0,0,0,0,0,0];
+  c2=in1;
+  var FFF;
+  FFF= Math.floor( c2 * 0.9);
+  c2=c2-FFF;
+  c3=c3+FFF;
+  
+  var FFF=[c1,c2,c3,c4,c5,c6];
+  return FFF;
+  
+}//c2
+
+function 規則c3(in1){
+  //console.log( in1 );
+  var [c1,c2,c3,c4,c5,c6]=[0,0,0,0,0,0];
+  c3=in1;
+  var FFF;
+  FFF= Math.floor( c3 * 0.8);
+  c3=c3-FFF;
+  c4=c4+FFF;
+  
+  var FFF=[c1,c2,c3,c4,c5,c6];
+  return FFF;
+  
+}//c2
+
+function 規則c4(in1){
+  //console.log( in1 );
+  var [c1,c2,c3,c4,c5,c6]=[0,0,0,0,0,0];
+  c4=in1;
+  var FFF;
+  FFF= Math.floor( c4 * 0.6); //升級
+  c4=c4-FFF;
+  c5=c5+FFF;
+  
+  FFF= Math.floor( c4 * 0.15); //降級
+  c4=c4-FFF;
+  c3=c3+FFF;
+  
+  var FFF=[c1,c2,c3,c4,c5,c6];
+  return FFF;
+  
+}//c2
+
+function 規則c5(in1){
+  //console.log( in1 );
+  var [c1,c2,c3,c4,c5,c6]=[0,0,0,0,0,0];
+  c5=in1;
+  var FFF;
+  FFF= Math.floor( c5 * 0.3); //升級
+  c5=c5-FFF;
+  c6=c6+FFF;
+  
+  FFF= Math.floor( c5 * 0.3); //降級
+  c5=c5-FFF;
+  c4=c4+FFF;
+  
+  var FFF=[c1,c2,c3,c4,c5,c6];
+  return FFF;
+  
+}//c2
+
+function 規則c6(in1){
+  //console.log( in1 );
+  var [c1,c2,c3,c4,c5,c6]=[0,0,0,0,0,0];
+  c6=in1;
+  var FFF;
+ 
+  FFF= Math.floor( c6 * 0.6); //降級
+  c6=c6-FFF;
+  c5=c5+FFF;
+  
+  var FFF=[c1,c2,c3,c4,c5,c6];
+  return FFF;
+  
+}//c2
+
+
+
+    </script>
+  </head>
+  <body>
+<button id="poi230323btn">poi230323btn</button>
+<button id="poi230323btn2">poi230323btn2</button>
+
+<div id="aaa">aaa</div>
+<div id="bbb">bbb</div>
+  </body>
+</html>
