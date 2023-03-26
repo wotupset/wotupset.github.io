@@ -16,24 +16,29 @@ button {
 
     </style>
     <script>
-$("#b1").click(function(){
-  poi();
+$(document).ready(function() {
+  $("#b1").click(function(){
+    console.log('click');
+    poi();
+  });
 });
+      
 function poi(){
-var a3=$('#a3');
-//console.log( a3[0].value );
-var a1=$('#a1');
-//console.log( a1[0].value );
-a1[0].value= a3[0].value - 20;
-var a2=$('#a2');
-//console.log( a2[0].value );
-a2[0].value= 90 - a1[0].value ;
-FFF=`
-${a1[0].value}收
-花${a2[0].value}
-補${a3[0].value}
-`;
-$("#d1").html(FFF);
+console.log('poi');
+  var a3=$('#a3');
+  //console.log( a3[0].value );
+  var a1=$('#a1');
+  //console.log( a1[0].value );
+  a1[0].value= a3[0].value - 20;
+  var a2=$('#a2');
+  //console.log( a2[0].value );
+  a2[0].value= 90 - a1[0].value ;
+  FFF=`
+  ${a1[0].value}收
+  花${a2[0].value}
+  補${a3[0].value}
+  `;
+  $("#d1").html(FFF);
 }
 
 
