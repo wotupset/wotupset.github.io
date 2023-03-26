@@ -1,0 +1,54 @@
+<html>
+  <head>
+<script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+
+    <style>
+input {
+    width: 100px;
+    height: 50px;
+}
+button {
+  width: auto; 
+  min-width: 50px; 
+  height: 50px;
+}
+
+    </style>
+    <script>
+$("#b1").click(function(){
+  poi();
+});
+function poi(){
+var a3=$('#a3');
+//console.log( a3[0].value );
+var a1=$('#a1');
+//console.log( a1[0].value );
+a1[0].value= a3[0].value - 20;
+var a2=$('#a2');
+//console.log( a2[0].value );
+a2[0].value= 90 - a1[0].value ;
+FFF=`
+${a1[0].value}收
+花${a2[0].value}
+補${a3[0].value}
+`;
+$("#d1").html(FFF);
+}
+
+
+
+    </script>
+  </head>
+  <body>
+
+<input type="text" id="a1" value="0">
+收
+花
+<input type="text" id="a2" value="0">
+補
+<input type="text" id="a3" value="0">
+<button id="b1">ok</button>
+<div id="d1"></div>
+
+  </body>
+</html>
